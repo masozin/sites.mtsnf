@@ -37,20 +37,12 @@
     },
     {
       "id": "m3",
-      "type": "dropdown",
+      "type": "link",
       "status": "show",
       "icon": "ti:file-description",
       "label": "Soal UM",
-      "children": [
-        {
-          "id": "m3a",
-          "type": "link",
-          "status": "show",
-          "label": "Akidah Akhlah",
-          "url": "https://docs.google.com/spreadsheets/d/1JJwOYeNzaMAeHhq70XF4l2sz27aR4lUfJ91g0bUFTbE/edit?usp=sharing",
-          "target": "_blank"
-        }
-      ]
+      "url": "https://drive.google.com/drive/folders/1MxNfC38Zzzn2R1x-DLE9wxkH6h0-OYu2?usp=sharing",
+      "target": "_blabk"
     },
     {
       "id": "m5",
@@ -70,7 +62,7 @@
       "id": "m8",
       "type": "link",
       "status": "show",
-      "icon": "ti:school",
+      "icon": "ti:book",
       "label": "Nilai UM",
       "url": "https://docs.google.com/spreadsheets/d/1YuKqJdKR4wWYaVYMX3I-TQSRVKc_JWx5-tCyf9zleuk/edit?usp=sharing",
       "target": "_blank"
