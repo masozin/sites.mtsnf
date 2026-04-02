@@ -42,7 +42,8 @@
       "icon": "ti:file-description",
       "label": "Soal UM",
       "url": "https://drive.google.com/drive/folders/1MxNfC38Zzzn2R1x-DLE9wxkH6h0-OYu2?usp=sharing",
-      "target": "_blabk"
+      "target": "_blabk",
+      "style": { "bgcolor": "#1a3a6a" }
     },
     {
       "id": "m5",
@@ -74,7 +75,8 @@
       "icon": "ti:table",
       "label": "Isi RDM",
       "url": "https://mtsnf.ozinsq.my.id/rdm",
-      "target": "_blank"
+      "target": "_blank",
+      "style": { "bgcolor": "#1a3a6a" }
     },
     {
       "id": "m9",
