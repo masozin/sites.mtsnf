@@ -1,0 +1,113 @@
+{
+  "site": {
+    "lang": "id",
+    "title": "MTS Nurul Falah",
+    "favicon": "icon.png"
+  },
+  "profile": {
+    "banner": "banner.jpg",
+    "avatar": "profil.png",
+    "name": "MTS NURUL FALAH",
+    "bio": "Kutapandan Kec. Lempuing Kab. OKI",
+    "status": "show"
+  },
+  "menu": [
+    {
+      "id": "m1",
+      "type": "link",
+      "status": "show",
+      "icon": "ti:user",
+      "label": "Data Guru",
+      "url": "https://docs.google.com/spreadsheets/d/14mRkj-0kn4kVubeiNV55HI7O9SVG08Ls/edit?usp=sharing&ouid=114166947787713590221&rtpof=true&sd=true",
+      "target": "_blank"
+    },
+    {
+      "id": "m2",
+      "type": "link",
+      "status": "show",
+      "icon": "ti:users",
+      "label": "Data Siswa",
+      "url": "https://docs.google.com/spreadsheets/d/1GJ8C6Ld3j6VP1PjSg9pO-roObfvjOXYU9xPb1F5oLUU/edit?gid=2141252214#gid=2141252214",
+      "target": "_blank"
+    },
+    {
+      "id": "div1",
+      "type": "divider",
+      "status": "show"
+    },
+    {
+      "id": "m3",
+      "type": "dropdown",
+      "status": "show",
+      "icon": "ti:file-description",
+      "label": "Soal UM",
+      "children": [
+        {
+          "id": "m3a",
+          "type": "link",
+          "status": "show",
+          "label": "Akidah Akhlah",
+          "url": "https://docs.google.com/spreadsheets/d/1JJwOYeNzaMAeHhq70XF4l2sz27aR4lUfJ91g0bUFTbE/edit?usp=sharing",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "id": "m5",
+      "type": "link",
+      "status": "show",
+      "icon": "ti:users",
+      "label": "Peserta UM",
+      "url": "https://docs.google.com/spreadsheets/d/14exSxO9HGpmimRpsfDCl408fSWrZQHNvrTiOouSKhcQ/edit?gid=921678975#gid=921678975",
+      "target": "_blank"
+    },
+    {
+      "id": "div3",
+      "type": "divider",
+      "status": "show"
+    },
+    {
+      "id": "m8",
+      "type": "link",
+      "status": "show",
+      "icon": "ti:school",
+      "label": "Nilai UM",
+      "url": "https://docs.google.com/spreadsheets/d/1YuKqJdKR4wWYaVYMX3I-TQSRVKc_JWx5-tCyf9zleuk/edit?usp=sharing",
+      "target": "_blank"
+    },
+    {
+      "id": "m6",
+      "type": "link",
+      "status": "show",
+      "icon": "ti:table",
+      "label": "Isi RDM",
+      "url": "https://mtsnf.ozinsq.my.id/rdm",
+      "target": "_blank"
+    },
+    {
+      "id": "m9",
+      "type": "countdown",
+      "status": "hide",
+      "label": "Pelaksanaan UM",
+      "deadline": "+5d"
+    },
+    {
+      "id": "m10",
+      "type": "text",
+      "status": "hide",
+      "content": "Selamat datang di microsite resmi MTS Nurul Falah.",
+      "style": { "align": "center", "color": "#8b949e", "size": "0.88rem" }
+    },
+    {
+      "id": "m11",
+      "type": "textarea",
+      "status": "hide",
+      "label": "Tentang Kami",
+      "content": "MTS Nurul Falah adalah madrasah tsanawiyah yang berkomitmen memberikan pendidikan berkualitas berbasis karakter dan keimanan. Berlokasi di Kutapandan, Kec. Lempuing, Kab. OKI."
+    }
+  ],
+  "footer": {
+    "status": "show",
+    "text": "© 2025 MTS Nurul Falah. All rights reserved."
+  }
+}
