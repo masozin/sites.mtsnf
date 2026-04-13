@@ -33,7 +33,23 @@
     {
       "id": "div1",
       "type": "divider",
-      "status": "show"
+      "status": "show",
+      "thickness": 0,
+      "height": "20px"
+    },
+    {
+      "id": "m9",
+      "type": "countdown",
+      "status": "show",
+      "label": "Pelaksanaan UM",
+      "deadline": "2026-04-20T07:00:00"
+    },
+    {
+      "id": "div1",
+      "type": "divider",
+      "status": "show",
+      "thickness": 0,
+      "height": "5px"
     },
     {
       "id": "m3",
@@ -49,7 +65,7 @@
       "id": "m5",
       "type": "link",
       "status": "show",
-      "icon": "ti:user",
+      "icon": "ti:users-group",
       "label": "Peserta UM",
       "url": "https://docs.google.com/spreadsheets/d/14exSxO9HGpmimRpsfDCl408fSWrZQHNvrTiOouSKhcQ/edit?gid=921678975#gid=921678975",
       "target": "_blank"
@@ -57,13 +73,14 @@
     {
       "id": "div3",
       "type": "divider",
-      "status": "show"
+      "status": "show",
+      "height": "20px"
     },
     {
       "id": "m8",
       "type": "link",
       "status": "show",
-      "icon": "ti:book",
+      "icon": "ti:chart-infographic",
       "label": "Nilai UM",
       "url": "https://docs.google.com/spreadsheets/d/1YuKqJdKR4wWYaVYMX3I-TQSRVKc_JWx5-tCyf9zleuk/edit?gid=1870340439#gid=1870340439",
       "target": "_blank"
@@ -72,18 +89,11 @@
       "id": "m6",
       "type": "link",
       "status": "show",
-      "icon": "ti:table",
+      "icon": "ti:device-desktop-analytics",
       "label": "Isi RDM",
       "url": "https://mtsnf.ozinsq.my.id/rdm",
       "target": "_blank",
       "style": { "bgcolor": "#1a3a6a" }
-    },
-    {
-      "id": "m9",
-      "type": "countdown",
-      "status": "hide",
-      "label": "Pelaksanaan UM",
-      "deadline": "+5d"
     },
     {
       "id": "m10",

@@ -176,9 +176,7 @@
 
       /* ─── Divider ────────────────────────────────────────────────── */
       .item-divider {
-        height: 1px;
-        background: var(--clr-border);
-        margin: 6px 0;
+        flex-shrink: 0; /* styled inline via JS */
       }
 
       /* ─── Link / Button ──────────────────────────────────────────── */
@@ -237,33 +235,60 @@
 
       /* ─── Dropdown container ─────────────────────────────────────── */
       .dropdown-children {
-        display: none;
+        display: flex;
         flex-direction: column;
         gap: 4px;
-        padding: 6px 0 2px 20px;
+        padding: 0 0 0 20px;
         border-left: 2px solid var(--clr-accent);
         margin-left: 8px;
-        animation: slideDown 0.2s ease;
+        /* smooth open/close */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-4px);
+        transition:
+          max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 0.24s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.24s cubic-bezier(0.4, 0, 0.2, 1),
+          padding 0.28s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .dropdown-children.show {
-        display: flex;
-      }
-
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-6px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        max-height: 1200px; /* tall enough for any depth */
+        opacity: 1;
+        transform: translateY(0);
+        padding: 6px 0 4px 20px;
       }
 
       /* nested children indent */
       .dropdown-children .dropdown-children {
         margin-left: 4px;
         border-left-color: var(--clr-accent2);
+      }
+
+      /* ─── Dropdown trigger — accent bar on left when open ───────── */
+      .item-link.open {
+        border-color: var(--clr-accent);
+        background: rgba(79, 156, 249, 0.06);
+      }
+
+      /* ─── Ripple effect on dropdown trigger click ────────────────── */
+      .item-link {
+        position: relative;
+        overflow: hidden;
+      }
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(79, 156, 249, 0.18);
+        transform: scale(0);
+        animation: ripple-anim 0.5s linear;
+        pointer-events: none;
+      }
+      @keyframes ripple-anim {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
       }
 
       /* ─── Text block ─────────────────────────────────────────────── */
@@ -296,27 +321,101 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 6px;
-        padding: 14px 16px;
+        gap: 8px;
+        padding: 16px 16px 14px;
         border-radius: var(--radius-btn);
-        border: 1px solid rgba(255, 193, 7, 0.25);
-        background: rgba(255, 193, 7, 0.06);
+        border: 1px solid rgba(250, 197, 40, 0.25);
+        background: rgba(255, 193, 7, 0);
         text-align: center;
       }
       .item-countdown .cd-label {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         font-weight: 600;
         color: #f0c040;
         text-transform: uppercase;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.07em;
       }
-      .item-countdown .cd-timer {
+      .item-countdown .cd-segments {
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .item-countdown .cd-seg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        min-width: 48px;
+      }
+      .item-countdown .cd-num {
         font-family: var(--font-display);
-        font-size: 1.7rem;
+        font-size: 1.85rem;
         font-weight: 800;
         color: #ffd060;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.02em;
         line-height: 1;
+        background: rgba(255, 208, 0, 0.08);
+        border-radius: 8px;
+        padding: 4px 8px;
+        min-width: 52px;
+        text-align: center;
+      }
+      .item-countdown .cd-unit {
+        font-size: 0.62rem;
+        font-weight: 700;
+        color: #c8a020;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .item-countdown .cd-sep {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: rgba(255, 208, 0, 0.35);
+        line-height: 1;
+        margin-top: 4px;
+        align-self: flex-start;
+      }
+
+      /* ─── Icon Row ───────────────────────────────────────────────── */
+      .item-icon-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 4px 0;
+      }
+      .icon-row-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: var(--clr-surface);
+        border: 1px solid var(--clr-border);
+        color: var(--clr-text);
+        text-decoration: none;
+        font-size: 1.45rem;
+        transition:
+          background var(--transition),
+          border-color var(--transition),
+          box-shadow var(--transition),
+          transform var(--transition);
+        box-shadow: var(--shadow-btn);
+        flex-shrink: 0;
+      }
+      .icon-row-btn i {
+        font-size: 1.35rem;
+      }
+      .icon-row-btn:hover {
+        background: rgba(79, 156, 249, 0.12);
+        border-color: var(--clr-accent);
+        box-shadow: var(--shadow-btn-hover);
+        transform: translateY(-2px) scale(1.07);
+      }
+      .icon-row-btn:active {
+        transform: scale(0.94);
       }
 
       /* ─── Footer ─────────────────────────────────────────────────── */
@@ -423,12 +522,16 @@
         return new Date(str).getTime();
       }
 
-      function formatTime(ms) {
-        if (ms <= 0) return "00:00:00";
-        const h = Math.floor(ms / 36e5);
+      function formatSegments(ms) {
+        if (ms <= 0) return { d: 0, h: 0, m: 0, s: 0 };
+        const d = Math.floor(ms / 864e5);
+        const h = Math.floor((ms % 864e5) / 36e5);
         const m = Math.floor((ms % 36e5) / 6e4);
         const s = Math.floor((ms % 6e4) / 1e3);
-        return [h, m, s].map((n) => String(n).padStart(2, "0")).join(":");
+        return { d, h, m, s };
+      }
+      function pad(n) {
+        return String(n).padStart(2, "0");
       }
 
       // Build a single menu item element (recursive for nested)
@@ -439,6 +542,20 @@
           case "divider": {
             const el = document.createElement("div");
             el.className = "item-divider";
+            const thick =
+              item.thickness !== undefined ? Number(item.thickness) : 1;
+            const color = item.color || "rgba(255,255,255,0.07)";
+            const spacingH = item.height || (thick === 0 ? "8px" : "16px");
+            // Height = total vertical space; line sits in the middle
+            el.style.height = spacingH;
+            el.style.display = "flex";
+            el.style.alignItems = "center";
+            if (thick > 0) {
+              // inner line element
+              const line = document.createElement("div");
+              line.style.cssText = `width:100%;height:${thick}px;background:${color};border-radius:${thick}px;`;
+              el.appendChild(line);
+            }
             return el;
           }
 
@@ -491,20 +608,63 @@
             el.className = "item-countdown";
             const s = item.style || {};
             if (s.bgcolor) el.style.background = s.bgcolor;
-            if (s.color) el.style.color = s.color;
+            if (s.color) el.style.borderColor = s.color;
 
             const lbl = document.createElement("div");
             lbl.className = "cd-label";
+            if (s.color) lbl.style.color = s.color;
             lbl.textContent = item.label || "Waktu tersisa";
 
-            const timer = document.createElement("div");
-            timer.className = "cd-timer";
+            // Build segment containers: D : H : M : S
+            const units = [
+              { key: "d", label: "Hari" },
+              { key: "h", label: "Jam" },
+              { key: "m", label: "Menit" },
+              { key: "s", label: "Detik" },
+            ];
+
+            const segsWrap = document.createElement("div");
+            segsWrap.className = "cd-segments";
+
+            const numEls = {};
+            units.forEach((u, i) => {
+              const seg = document.createElement("div");
+              seg.className = "cd-seg";
+
+              const numEl = document.createElement("div");
+              numEl.className = "cd-num";
+              if (s.color) numEl.style.color = s.color;
+              numEl.textContent = "00";
+              numEls[u.key] = numEl;
+
+              const unitEl = document.createElement("div");
+              unitEl.className = "cd-unit";
+              if (s.color) unitEl.style.color = s.color;
+              unitEl.textContent = u.label;
+
+              seg.appendChild(numEl);
+              seg.appendChild(unitEl);
+              segsWrap.appendChild(seg);
+
+              // Add separator except after last
+              if (i < units.length - 1) {
+                const sep = document.createElement("div");
+                sep.className = "cd-sep";
+                sep.textContent = ":";
+                segsWrap.appendChild(sep);
+              }
+            });
 
             el.appendChild(lbl);
-            el.appendChild(timer);
+            el.appendChild(segsWrap);
 
             function tick() {
-              timer.textContent = formatTime(deadlineMs - Date.now());
+              const remaining = deadlineMs - Date.now();
+              const t = formatSegments(remaining);
+              numEls.d.textContent = pad(t.d);
+              numEls.h.textContent = pad(t.h);
+              numEls.m.textContent = pad(t.m);
+              numEls.s.textContent = pad(t.s);
             }
             tick();
             setInterval(tick, 1000);
@@ -536,15 +696,59 @@
               if (childEl) children.appendChild(childEl);
             });
 
-            btn.addEventListener("click", () => {
+            btn.addEventListener("click", (e) => {
+              // ── Ripple ──────────────────────────────────────────────
+              const ripple = document.createElement("span");
+              ripple.className = "ripple";
+              const rect = btn.getBoundingClientRect();
+              const size = Math.max(rect.width, rect.height);
+              ripple.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size / 2}px;top:${e.clientY - rect.top - size / 2}px`;
+              btn.appendChild(ripple);
+              ripple.addEventListener("animationend", () => ripple.remove());
+
+              // ── Toggle open/close ────────────────────────────────────
               const open = children.classList.toggle("show");
               btn.classList.toggle("open", open);
               btn.setAttribute("aria-expanded", String(open));
+
+              // ── Stagger children on open ─────────────────────────────
+              if (open) {
+                Array.from(children.children).forEach((child, i) => {
+                  child.style.opacity = "0";
+                  child.style.transform = "translateX(-8px)";
+                  child.style.transition = "none";
+                  requestAnimationFrame(() => {
+                    child.style.transition = `opacity 0.2s ease ${i * 45}ms, transform 0.2s ease ${i * 45}ms`;
+                    child.style.opacity = "1";
+                    child.style.transform = "translateX(0)";
+                  });
+                });
+              }
             });
 
             wrapper.appendChild(btn);
             wrapper.appendChild(children);
             return wrapper;
+          }
+
+          case "icon-row": {
+            // Horizontal icon buttons, max 5 per row, centered
+            const wrap = document.createElement("div");
+            wrap.className = "item-icon-row";
+            const items = (item.children || []).filter(
+              (c) => c.status !== "hide",
+            );
+            items.forEach((child) => {
+              const btn = document.createElement("a");
+              btn.className = "icon-row-btn";
+              btn.href = child.url || "#";
+              if (child.target) btn.target = child.target;
+              if (child.label) btn.title = child.label; // tooltip on hover
+              btn.innerHTML = renderIcon(child.icon);
+              applyStyle(btn, child.style);
+              wrap.appendChild(btn);
+            });
+            return wrap;
           }
 
           default:

@@ -666,3 +666,127 @@ Field "icon" mendukung 3 format:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  END OF DOCUMENTATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ PEMBARUAN VERSI 2.1 — FITUR BARU
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ DIVIDER — atribut baru: thickness, color, height                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  {
+    "id":        "div-1",
+    "type":      "divider",
+    "status":    "show",
+    "thickness": 1,           ← Ketebalan garis dalam px. 0 = tanpa garis (spacer)
+    "color":     "rgba(255,255,255,0.1)",  ← Warna garis (CSS color apapun)
+    "height":    "20px"       ← Total tinggi area divider (termasuk ruang atas-bawah)
+  }
+
+  Contoh-contoh:
+
+  Garis tipis default:
+    { "id":"d1", "type":"divider", "status":"show", "thickness":1, "height":"16px" }
+
+  Garis tebal berwarna aksen:
+    { "id":"d2", "type":"divider", "status":"show",
+      "thickness":3, "color":"rgba(79,156,249,0.4)", "height":"24px" }
+
+  Hanya spasi tanpa garis (thickness=0):
+    { "id":"d3", "type":"divider", "status":"show", "thickness":0, "height":"12px" }
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ COUNTDOWN — sekarang menampilkan Hari : Jam : Menit : Detik                │
+│             masing-masing dilengkapi label di bawah angka                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  Tampilan:
+    ┌──────┐   ┌──────┐   ┌──────┐   ┌──────┐
+    │  04  │ : │  23  │ : │  11  │ : │  07  │
+    └──────┘   └──────┘   └──────┘   └──────┘
+      HARI       JAM      MENIT      DETIK
+
+  Tidak ada perubahan pada format JSON — countdown yang sudah ada langsung
+  otomatis menggunakan tampilan baru.
+
+  {
+    "id":       "cd-1",
+    "type":     "countdown",
+    "status":   "show",
+    "label":    "Pendaftaran ditutup dalam",
+    "deadline": "+5d",
+    "style": {
+      "bgcolor": "rgba(255,200,0,0.07)",
+      "color":   "#ffd060"
+    }
+  }
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ ICON-ROW — Baris ikon horizontal (untuk media sosial, shortcut, dll)       │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  Menampilkan tombol ikon bulat/kotak tanpa teks, tersusun horizontal,
+  rata tengah. Maksimal 5 per baris — jika lebih dari 5, otomatis pindah
+  ke baris berikutnya.
+
+  Setiap anak (children) mendukung: icon, url, target, label (sebagai tooltip),
+  dan style (untuk mewarnai ikon masing-masing).
+
+  {
+    "id":     "sosmed",
+    "type":   "icon-row",
+    "status": "show",
+    "children": [
+      {
+        "id":     "ir-wa",
+        "status": "show",
+        "icon":   "ti:brand-whatsapp",
+        "label":  "WhatsApp",          ← muncul sebagai tooltip saat hover
+        "url":    "https://wa.me/...",
+        "target": "_blank",
+        "style":  { "color": "#25d366" }   ← warna ikon individual
+      },
+      {
+        "id":     "ir-ig",
+        "status": "show",
+        "icon":   "ti:brand-instagram",
+        "label":  "Instagram",
+        "url":    "https://instagram.com/akun",
+        "target": "_blank",
+        "style":  { "color": "#e1306c" }
+      },
+      {
+        "id":     "ir-yt",
+        "status": "show",
+        "icon":   "ti:brand-youtube",
+        "label":  "YouTube",
+        "url":    "https://youtube.com/@channel",
+        "target": "_blank",
+        "style":  { "color": "#ff0000" }
+      }
+    ]
+  }
+
+  Referensi ikon media sosial (Tabler):
+  ────────────────────────────────────
+  ti:brand-whatsapp     → WhatsApp
+  ti:brand-instagram    → Instagram
+  ti:brand-facebook     → Facebook
+  ti:brand-youtube      → YouTube
+  ti:brand-telegram     → Telegram
+  ti:brand-tiktok       → TikTok
+  ti:brand-twitter      → Twitter/X
+  ti:brand-linkedin     → LinkedIn
+  ti:brand-github       → GitHub
+  ti:brand-google       → Google
+  ti:mail               → Email
+  ti:phone              → Telepon
+
+  CATATAN: Untuk menyembunyikan satu ikon di dalam icon-row, cukup set
+  "status": "hide" pada item anak tersebut.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ END OF UPDATE v2.1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
