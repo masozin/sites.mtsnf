@@ -49,7 +49,7 @@
       "id": "m5",
       "type": "link",
       "status": "show",
-      "icon": "ti:users",
+      "icon": "ti:user",
       "label": "Peserta UM",
       "url": "https://docs.google.com/spreadsheets/d/14exSxO9HGpmimRpsfDCl408fSWrZQHNvrTiOouSKhcQ/edit?gid=921678975#gid=921678975",
       "target": "_blank"
@@ -65,7 +65,7 @@
       "status": "show",
       "icon": "ti:book",
       "label": "Nilai UM",
-      "url": "https://docs.google.com/spreadsheets/d/1YuKqJdKR4wWYaVYMX3I-TQSRVKc_JWx5-tCyf9zleuk/edit?usp=sharing",
+      "url": "https://docs.google.com/spreadsheets/d/1YuKqJdKR4wWYaVYMX3I-TQSRVKc_JWx5-tCyf9zleuk/edit?gid=1870340439#gid=1870340439",
       "target": "_blank"
     },
     {
