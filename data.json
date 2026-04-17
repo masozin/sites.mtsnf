@@ -30,6 +30,15 @@
       "url": "https://docs.google.com/spreadsheets/d/1GJ8C6Ld3j6VP1PjSg9pO-roObfvjOXYU9xPb1F5oLUU/edit?gid=2141252214#gid=2141252214",
       "target": "_blank"
     },
+	{
+      "id": "m3",
+      "type": "link",
+      "status": "show",
+      "icon": "ti:table",
+      "label": "Lembar Absensi",
+      "url": "https://docs.google.com/spreadsheets/d/1xeMnH9nfBc8Q_BczGhSaAPQ8fJO55YKD3qUHu8ftp6I/edit?gid=958660185#gid=958660185",
+      "target": "_blank"
+    },
     {
       "id": "div1",
       "type": "divider",
