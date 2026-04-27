@@ -30,7 +30,7 @@
       "url": "https://docs.google.com/spreadsheets/d/1GJ8C6Ld3j6VP1PjSg9pO-roObfvjOXYU9xPb1F5oLUU/edit?gid=2141252214#gid=2141252214",
       "target": "_blank"
     },
-	{
+    {
       "id": "m3",
       "type": "link",
       "status": "show",
@@ -45,20 +45,6 @@
       "status": "show",
       "thickness": 0,
       "height": "20px"
-    },
-    {
-      "id": "m9",
-      "type": "countdown",
-      "status": "show",
-      "label": "Pelaksanaan UM",
-      "deadline": "2026-04-20T07:00:00"
-    },
-    {
-      "id": "div1",
-      "type": "divider",
-      "status": "show",
-      "thickness": 0,
-      "height": "5px"
     },
     {
       "id": "m3",
@@ -95,6 +81,13 @@
       "target": "_blank"
     },
     {
+      "id": "m9",
+      "type": "countdown",
+      "status": "show",
+      "label": "Pengisian RDM",
+      "deadline": "2026-05-14T07:00:00"
+    },
+    {
       "id": "m6",
       "type": "link",
       "status": "show",
@@ -103,6 +96,40 @@
       "url": "https://mtsnf.ozinsq.my.id/rdm",
       "target": "_blank",
       "style": { "bgcolor": "#1a3a6a" }
+    },
+    {
+      "id": "div1",
+      "type": "divider",
+      "status": "show",
+      "thickness": 1,
+      "height": "12px"
+    },
+    {
+      "id": "nilai-ijazah",
+      "type": "dropdown",
+      "status": "show",
+      "icon": "ti:certificate",
+      "label": "Nilai Ijazah",
+      "children": [
+        {
+          "id": "ijazah91",
+          "type": "link",
+          "status": "show",
+          "icon": "ti:file-certificate",
+          "label": "Nilai Ijazah 9.1",
+          "url": "https://docs.google.com/spreadsheets/d/1d7dZIjJ7qFK-zFwGsg7wzv_YI8QW-dR-7jvJWhYZfqY/edit?usp=sharing",
+          "target": "_blank"
+        },
+        {
+          "id": "ijazah92",
+          "type": "link",
+          "status": "show",
+          "icon": "ti:file-certificate",
+          "label": "Nilai Ijazah 9.2",
+          "url": "https://docs.google.com/spreadsheets/d/1eM5ji4QGCyyLF6XD9J8VpLe0KwctBaFSQdCwyKig8_Q/edit?usp=sharing",
+          "target": "_blank"
+        }
+      ]
     },
     {
       "id": "m10",
