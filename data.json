@@ -49,7 +49,7 @@
     {
       "id": "m3",
       "type": "link",
-      "status": "show",
+      "status": "hide",
       "icon": "ti:file-description",
       "label": "Soal UM",
       "url": "https://drive.google.com/drive/folders/1MxNfC38Zzzn2R1x-DLE9wxkH6h0-OYu2?usp=sharing",
