@@ -83,7 +83,7 @@
     {
       "id": "m9",
       "type": "countdown",
-      "status": "show",
+      "status": "hide",
       "label": "Pengisian RDM",
       "deadline": "2026-05-14T07:00:00"
     },
