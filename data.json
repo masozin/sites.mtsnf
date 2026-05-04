@@ -40,10 +40,10 @@
       "target": "_blank"
     },
     {
-      "id": "div1",
+      "id": "div2",
       "type": "divider",
       "status": "show",
-      "thickness": 0,
+      "thickness": 1,
       "height": "20px"
     },
     {
@@ -64,12 +64,6 @@
       "label": "Peserta UM",
       "url": "https://docs.google.com/spreadsheets/d/14exSxO9HGpmimRpsfDCl408fSWrZQHNvrTiOouSKhcQ/edit?gid=921678975#gid=921678975",
       "target": "_blank"
-    },
-    {
-      "id": "div3",
-      "type": "divider",
-      "status": "show",
-      "height": "20px"
     },
     {
       "id": "m8",
@@ -98,11 +92,11 @@
       "style": { "bgcolor": "#1a3a6a" }
     },
     {
-      "id": "div1",
+      "id": "div3",
       "type": "divider",
       "status": "show",
       "thickness": 1,
-      "height": "12px"
+      "height": "20px"
     },
     {
       "id": "nilai-ijazah",
